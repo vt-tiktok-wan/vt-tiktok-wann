@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Player</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<h3>Video</h3>
+<video id="player" controls width="100%"></video>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+const t = params.get("t");
+
+const player = document.getElementById("player");
+
+if (id) {
+  // contoh: video1.mp4, video2.mp4
+  player.src = "https://www.w3schools.com/html/mov_bbb.mp4";
+}
+
+// decode parameter t (Base64)
+if (t) {
+  const decoded = atob(t);
+  console.log("Isi t:", decoded);
+}
+</script>
+
+</body>
+</html>
